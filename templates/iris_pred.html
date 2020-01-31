@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Prediction</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel='stylesheet' type='text/css' media='screen' href="{{ url_for('static',filename='css/style.css')}}">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body class="">
+<!-----Form------>
+
+<i><h1 class="form-head",color="black">Predict which types Iris flower</h1></i>>
+<div align="middle"><img src="{{ url_for('static',filename='iris.png')}}" class="img-fluid" alt="Responsive image"> </div>
+<div class="row">
+  {% if req %}
+  <div class="col-sm-2 tm">
+  </div>   
+  {% endif %}
+{% if req %}
+<div class="col-sm-4 tm">
+  <h4>Prediction --></h4>
+</div>  
+{% endif %}  
+{% if 'Iris-virginica' == prediction%}
+<div class="col-sm-6">
+ <div class="card" style="width: 18rem;">
+   <img class="card-img-top" src="{{ url_for('static',filename='virginica.png')}}" alt="Card image cap">
+   <div class="card-body">
+     <h4 align="middle"  class="card-text">{{prediction}}</h4>
+   </div>
+ </div>
+</div>
+{% elif 'Iris-versicolor' == prediction%}
+<div class="col-sm-6">
+   <div class="card" style="width: 18rem;">
+     <img class="card-img-top" src="{{ url_for('static',filename='versicolor.png')}}" alt="Card image cap">
+     <div class="card-body">
+      <h4 align="middle" class="card-text">{{prediction}}</h4>
+    </div>
+   </div>
+ </div>
+{% elif 'Iris-setosa' == prediction %}
+<div class="col-sm-6">
+     <div class="card" style="width: 18rem;">
+       <img class="card-img-top" src="{{ url_for('static',filename='setosa.png')}}" alt="Card image cap">
+       <div class="card-body">
+         <h4 align="middle" class="card-text">{{prediction}}</h4>
+       </div>
+     </div>
+   </div>
+{% endif %}
+</div>
+<div class="container">
+ </div>
+<div class="container">
+    <form action ="/" method="POST">
+    <div class="form-row mt-4">
+      <div class="col-sm">
+        <input type="number" class="form-control" placeholder="iris sepal length" name="sepal_length" step="any" title="please enter iris sepal length" required="">
+     </div>
+     <div class="col-sm">
+      <input type="number" class="form-control" placeholder="iris sepal width" name="sepal_width" step="any"  title="please enter iris sepal width" required="">
+
+     </div>
+    </div>
+    <div class="form-row">
+         <div class="col-sm">
+        <input type="number" class="form-control" placeholder="iris petal length" name="petal_length" step="any"  title="please enter iris petal length" required="">
+     </div>
+     <div class="col-sm">
+      <input type="number" class="form-control" placeholder="iris petal width" name="petal_width" step="any"  title="please enter iris petal width" required="">
+     </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+   </div>
+    <div class="col-sm-7">
+      <input class="btn-submit" type="submit"  value="predict" name="pred" >
+ </div> 
+</form>  <br>
+</div>   
+<footer><center><h5">==----ML----==</h5></center></footer> 
+</body>
+</html>

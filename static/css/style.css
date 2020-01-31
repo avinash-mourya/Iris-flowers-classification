@@ -1,0 +1,56 @@
+*{
+    margin:0px;
+    padding:0px;
+    }
+     body
+    {
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+    .form-control
+    {
+        border:2px solid rgb(64,0,128);
+        border-radius:25px;
+    }
+    .col-sm
+    {
+        margin: 12px;
+    }
+    .form-head
+    {
+        text-align: center;
+    }
+    input.btn-submit
+    { 
+        position:relative;
+        margin: 15px;
+        border:2px solid rgb(0, 128, 6)!important;
+        border-radius: 25px;
+        width: 30%;
+        height: 40px;
+        color:rgb(35, 64, 194) 
+    }
+    input.btn-submit:hover
+    {
+        background-color:rgb(0, 128, 32);
+    }
+    h5
+    {
+        margin-left: 40%;
+    }
+   .tm
+   {
+       padding-top: 35px;
+   }
+   .row
+   {
+       margin-top: 25px;
+   }
+  h1{
+      font: bold;
+      color:rgb(0, 23, 128);
+  }
+  h4
+    {
+        color:green;
+    }
